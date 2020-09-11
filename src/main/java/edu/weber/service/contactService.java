@@ -38,15 +38,15 @@ public class contactService {
 	
 	public boolean validateContact(Contact contact)
 	{
-		if(contact.getFirstName() == null || contact.getLastName() == null || contact.getPhoneNumber() == null ||
-				contact.getAddress().getAddressLine1() == null  || contact.getAddress().getAddressType()  == null|| 
-				contact.getAddress().getCity() == null || contact.getAddress().getCountry() == null || 
-				contact.getAddress().getState() == null || contact.getAddress().getZipCode() == null)
+		if(contact.getFirstName() != "" && contact.getLastName() != "" && contact.getPhoneNumber() != "" &&
+				contact.getAddress().getAddressLine1() != ""  && contact.getAddress().getAddressType()  != ""&& 
+				contact.getAddress().getCity() != "" && contact.getAddress().getCountry() != "" &&
+				contact.getAddress().getState() != "" && contact.getAddress().getZipCode() != "")
 		{
-			return false;
+			return true;
 		}
 		else {
-			return true;
+			return false;
 		}
 	}
 }

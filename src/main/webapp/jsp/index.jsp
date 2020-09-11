@@ -25,12 +25,13 @@
 		State: <input type="text" name="state"/><br/>
 		Zip Code: <input type="text" name="zipCode"/><br/>
 		Country:  <input type="text" name="country"/><br/>
-	 	 	 
+	 	Address Type: <input type="text" name="addressType"/><br/>
+	 	<!--  	 
 	 	<select name=”addressType” id="addressType">
 			<option value=”home”>Home</option>
 			<option value=”business”>Business </option>  
 		</select>
-
+		-->
 	
 		<input type="submit" value="Submit" />
 	</form>
