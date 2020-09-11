@@ -30,6 +30,23 @@ public class contactService {
 	
 	public void addContact(Contact contact)
 	{
-		contactDao.addContact(contact);
+		if(validateContact(contact))
+		{
+			contactDao.addContact(contact);
+		}
+	}
+	
+	public boolean validateContact(Contact contact)
+	{
+		if(contact.getFirstName() == null || contact.getLastName() == null || contact.getPhoneNumber() == null ||
+				contact.getAddress().getAddressLine1() == null  || contact.getAddress().getAddressType()  == null|| 
+				contact.getAddress().getCity() == null || contact.getAddress().getCountry() == null || 
+				contact.getAddress().getState() == null || contact.getAddress().getZipCode() == null)
+		{
+			return false;
+		}
+		else {
+			return true;
+		}
 	}
 }

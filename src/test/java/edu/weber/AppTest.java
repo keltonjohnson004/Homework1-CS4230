@@ -42,16 +42,6 @@ public class AppTest
     	assertTrue("List size doesn't match", contacts.size() == 3);
     }
     
-    @Test
-    public void mockShouldAddContact()
-    {
-    	contactDAO contactDao = Mockito.mock(contactDAO.class);
-    	Mockito.when(contactDao.getContacts()).thenReturn(createContactList());
-    	
-    	contactService contactservice = new contactService(contactDao);
-    	List<Contact> contacts = contactservice.getContacts();
-    	assertTrue("List size doesn't match", contacts.size() == 3);
-    }
     
 
     private Contact createContact()

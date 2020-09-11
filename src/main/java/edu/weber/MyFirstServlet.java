@@ -34,85 +34,9 @@ public class MyFirstServlet extends HttpServlet
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		boolean createContact = true;
-		
-		if(req.getParameter("firstName") == null)
-		{
-			req.setAttribute("firstName", "firstName is null");
-		}
-		else
-		{
-			createContact = false;
-		}
-		if(req.getParameter("lastName") == null)
-		{
-			req.setAttribute("lastName", "lastName is null");
-		}
-		else
-		{
-			createContact = false;
-		}
-		if(req.getParameter("phoneNumber") == null)
-		{
-			req.setAttribute("phoneNumber", "phoneNumber is null");
-		}
-		else
-		{
-			createContact = false;
-		}
-		if(req.getParameter("streetAddress") == null)
-		{
-			req.setAttribute("streetAddress", "streetAddress is null");
-		}
-		else
-		{
-			createContact = false;
-		}
-		if(req.getParameter("city") == null)
-		{
-			req.setAttribute("city", "city is null");
-		}
-		else
-		{
-			createContact = false;
-		}
-		if(req.getParameter("state") == null)
-		{
-			req.setAttribute("state", "state is null");
-		}
-		else
-		{
-			createContact = false;
-		}
-		if(req.getParameter("zipCode") == null)
-		{
-			req.setAttribute("zipCode", "zipCode is null");
-		}
-		else
-		{
-			createContact = false;
-		}
-		if(req.getParameter("country") == null)
-		{
-			req.setAttribute("country", "country is null");
-		}
-		else
-		{
-			createContact = false;
-		}
-		if(req.getParameter("addressType") == null)
-		{
-			req.setAttribute("addressType", "addressType is null");
-		}
-		else
-		{
-			createContact = false;
-		}
 		
 		List<Contact> userList = contactservice.getContacts();
 		
-		if(createContact)
-		{
 
 			Contact newContact = new Contact(
 					req.getParameter("firstName"),
@@ -127,7 +51,7 @@ public class MyFirstServlet extends HttpServlet
 							req.getParameter("addressType")));
 
 		contactservice.addContact(newContact);
-		}
+		
 		req.setAttribute("contact", userList);
 		req.getRequestDispatcher("/jsp/index.jsp").forward(req, resp);
 	}
