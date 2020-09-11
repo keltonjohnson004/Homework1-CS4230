@@ -1,0 +1,4 @@
+
+mvn clean install
+docker build -t my-servlet . 
+docker run my-servlet -p 8080:8080
