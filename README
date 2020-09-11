@@ -1,4 +1,9 @@
-
+Commands:
 mvn clean install
 docker build -t my-servlet . 
 docker run -p 8080:8080 my-servlet
+
+
+Notes:
+I did my form validation in my contactService.java file, I wanted to keep my doPost method as simple as possible. I can move this if I need to.
+I also was trying to make the address type a drop down where the user could select home or business but was always returning null and I couldn't find a solution.
